@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>DRAMANE Hamzath - Data Analyst & Data Scientist</title>
-    <meta content="CV de Hamzath Dramane - Data Analyst, Data Science, Intelligence Artificielle" name="description">
-    <meta content="Hamzath, Dramane, CV, Data Analyst, Data Scientist, AI, Big Data" name="keywords">
+    <title>DRAMANE Hamzath - Data Analyst & BI Engineer | Fintech & Banque</title>
+    <meta content="CV de Hamzath Dramane - Data Analyst, Business Intelligence, Credit Scoring, Fintech, Secteur Bancaire UEMOA" name="description">
+    <meta content="Hamzath, Dramane, CV, Data Analyst, BI Engineer, Business Intelligence, Credit Scoring, Fintech, Banque, UEMOA, BCEAO, Power BI, SQL" name="keywords">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -647,6 +647,12 @@
             margin-bottom: 40px;
         }
 
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .portfolio-item {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
@@ -654,6 +660,12 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .portfolio-item[style*="grid-column: span 2"] {
+                grid-column: span 1 !important;
+            }
         }
 
         .portfolio-item:hover {
@@ -816,10 +828,20 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 1200px) {
+            .main {
+                margin-left: 200px;
+            }
+            .header {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 992px) {
             .header {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
+                width: 280px;
             }
 
             .header.active {
@@ -831,7 +853,7 @@
             }
 
             .section {
-                padding: 80px 30px;
+                padding: 60px 20px;
             }
 
             .about-grid,
@@ -844,13 +866,134 @@
                 grid-template-columns: 1fr;
             }
 
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item[style*="grid-column: span 2"] {
+                grid-column: span 1 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 48px;
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-subtitle {
+                font-size: 14px;
             }
 
             .controls {
                 top: 10px;
                 right: 10px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Portfolio responsive fixes */
+            .portfolio-content h4 {
+                font-size: 18px !important;
+            }
+
+            .portfolio-content p {
+                font-size: 13px !important;
+            }
+
+            .portfolio-tags {
+                flex-wrap: wrap;
+            }
+
+            .portfolio-tags .tag {
+                font-size: 10px;
+                padding: 4px 8px;
+            }
+
+            /* Grid stats responsive */
+            [style*="grid-template-columns: repeat(3, 1fr)"],
+            [style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            /* Feature boxes responsive */
+            [style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"],
+            [style*="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))"],
+            [style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Architecture diagram responsive */
+            pre {
+                font-size: 9px !important;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 40px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .portfolio-category {
+                padding: 15px !important;
+            }
+
+            .portfolio-category h3 {
+                font-size: 16px;
+            }
+
+            /* Stats grid mobile */
+            [style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-item i {
+                margin-bottom: 10px;
             }
         }
 
@@ -872,7 +1015,7 @@
             font-size: 20px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .mobile-toggle {
                 display: flex;
                 align-items: center;
@@ -969,8 +1112,8 @@
                 <span class="lang en hidden">HAMZATH DRAMANE</span>
             </h1>
             <p class="profile-title">
-                <span class="lang fr"> Data Analyst & Data Scientist Junior</span>
-                <span class="lang en hidden">Data Scientist Junior & Data Analyst</span>
+                <span class="lang fr">Data Analyst & BI Engineer | Fintech</span>
+                <span class="lang en hidden">Data Analyst & BI Engineer | Fintech</span>
             </p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/hamzath-dramane-06680427b" target="_blank">
@@ -1048,8 +1191,8 @@
                         <span class="typed-text" id="typed-text"></span>
                     </p>
                     <p class="section-subtitle">
-                        <span class="lang fr">Spécialisé en Data Analysis avec une évolution vers le Data Science. Je transforme des données complexes en insights stratégiques pour une prise de décision éclairée.</span>
-                        <span class="lang en hidden">Specialized in Data Analysis with an evolution towards Data Science. I transform complex data into strategic insights for informed decision making.</span>
+                        <span class="lang fr">Spécialisé en Business Intelligence et analyse de données financières. Je développe des solutions de Credit Scoring et des dashboards décisionnels pour le secteur bancaire et la Fintech en zone UEMOA.</span>
+                        <span class="lang en hidden">Specialized in Business Intelligence and financial data analysis. I develop Credit Scoring solutions and decision dashboards for the banking sector and Fintech in the UEMOA region.</span>
                     </p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">
@@ -1080,8 +1223,8 @@
                             <span class="lang en hidden">About Me</span>
                         </h2>
                         <p class="section-subtitle">
-                            <span class="lang fr">Passionné par l'intersection entre les données, l'intelligence artificielle et la finance, je combine une expertise technique solide avec une compréhension approfondie des enjeux économiques modernes.</span>
-                            <span class="lang en hidden">Passionate about the intersection between data, artificial intelligence and finance, I combine solid technical expertise with a deep understanding of modern economic challenges.</span>
+                            <span class="lang fr">Passionné par la Fintech et l'inclusion financière, je combine une expertise en Business Intelligence et analyse de données avec une compréhension approfondie du secteur bancaire. Créateur de CreditAI, une solution de scoring crédit pour les populations non-bancarisées en zone UEMOA.</span>
+                            <span class="lang en hidden">Passionate about Fintech and financial inclusion, I combine Business Intelligence and data analysis expertise with deep understanding of the banking sector. Creator of CreditAI, a credit scoring solution for unbanked populations in the UEMOA region.</span>
                         </p>
                         <div class="info-grid">
                             <div class="info-item">
@@ -1126,8 +1269,8 @@
                             </div>
                         </div>
                         <p>
-                            <span class="lang fr">Je me spécialise actuellement en Data Analysis avec une évolution progressive vers le métier de Data Scientist. Mon objectif est de développer des solutions data-driven qui génèrent un impact mesurable pour les entreprises.</span>
-                            <span class="lang en hidden">I am currently specializing in Data Analysis with a progressive evolution towards the Data Scientist role. My goal is to develop data-driven solutions that generate measurable impact for businesses.</span>
+                            <span class="lang fr">Je me spécialise en Business Intelligence et analyse de risque crédit pour le secteur bancaire. Mon projet CreditAI permet aux institutions financières d'évaluer la solvabilité des clients via l'analyse de leurs transactions Mobile Money, contribuant ainsi à l'inclusion financière de 100 millions de personnes en zone UEMOA.</span>
+                            <span class="lang en hidden">I specialize in Business Intelligence and credit risk analysis for the banking sector. My CreditAI project enables financial institutions to assess client creditworthiness through Mobile Money transaction analysis, contributing to financial inclusion for 100 million people in the UEMOA region.</span>
                         </p>
                     </div>
                 </div>
@@ -1150,8 +1293,78 @@
                     <div class="skill-category fade-in-up">
                         <h3>
                             <i class="fas fa-chart-bar"></i>
-                            <span class="lang fr">Data Analysis</span>
-                            <span class="lang en hidden">Data Analysis</span>
+                            <span class="lang fr">Business Intelligence</span>
+                            <span class="lang en hidden">Business Intelligence</span>
+                        </h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Power BI (DAX, M)</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">SQL Avancé</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Tableau / Excel Avancé</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in-up">
+                        <h3>
+                            <i class="fas fa-university"></i>
+                            <span class="lang fr">Domaine Bancaire</span>
+                            <span class="lang en hidden">Banking Domain</span>
+                        </h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Credit Scoring / Risque</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">KPIs Financiers</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Normes BCEAO / UEMOA</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category fade-in-up">
+                        <h3>
+                            <i class="fas fa-database"></i>
+                            <span class="lang fr">Data Engineering</span>
+                            <span class="lang en hidden">Data Engineering</span>
                         </h3>
                         <div class="skill-item">
                             <div class="skill-header">
@@ -1164,7 +1377,7 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">SQL</span>
+                                <span class="skill-name">ETL / Data Pipelines</span>
                                 <span class="skill-percent">90%</span>
                             </div>
                             <div class="skill-bar">
@@ -1173,11 +1386,11 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">Statistiques</span>
-                                <span class="skill-percent">85%</span>
+                                <span class="skill-name">PostgreSQL / MySQL</span>
+                                <span class="skill-percent">90%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
+                                <div class="skill-progress" style="width: 90%;"></div>
                             </div>
                         </div>
                     </div>
@@ -1185,12 +1398,12 @@
                     <div class="skill-category fade-in-up">
                         <h3>
                             <i class="fas fa-robot"></i>
-                            <span class="lang fr">Data Science</span>
-                            <span class="lang en hidden">Data Science</span>
+                            <span class="lang fr">Machine Learning</span>
+                            <span class="lang en hidden">Machine Learning</span>
                         </h3>
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">Machine Learning</span>
+                                <span class="skill-name">Scikit-learn / XGBoost</span>
                                 <span class="skill-percent">90%</span>
                             </div>
                             <div class="skill-bar">
@@ -1199,99 +1412,26 @@
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
-                                <span class="skill-name">Deep Learning</span>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">NLP</span>
-                                <span class="skill-percent">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category fade-in-up">
-                        <h3>
-                            <i class="fas fa-chart-line"></i>
-                            <span class="lang fr">Visualisation</span>
-                            <span class="lang en hidden">Visualization</span>
-                        </h3>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Power BI</span>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Tableau</span>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Matplotlib/Seaborn</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="skill-category fade-in-up">
-                        <h3>
-                            <i class="fas fa-cogs"></i>
-                            <span class="lang fr">Techniques Spécialisées</span>
-                            <span class="lang en hidden">Specialized Techniques</span>
-                        </h3>
-                        <div class="skill-item">
-                            <div class="skill-header">
                                 <span class="skill-name">
-                                    <span class="lang fr">Traitement Signal/Image</span>
-                                    <span class="lang en hidden">Signal/Image Processing</span>
+                                    <span class="lang fr">Modèles Prédictifs</span>
+                                    <span class="lang en hidden">Predictive Models</span>
                                 </span>
-                                <span class="skill-percent">85%</span>
+                                <span class="skill-percent">88%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
+                                <div class="skill-progress" style="width: 88%;"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span class="skill-name">
-                                    <span class="lang fr">Développement d'Applications</span>
-                                    <span class="lang en hidden">Application Development</span>
+                                    <span class="lang fr">FastAPI / MLOps</span>
+                                    <span class="lang en hidden">FastAPI / MLOps</span>
                                 </span>
-                                <span class="skill-percent">80%</span>
+                                <span class="skill-percent">85%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">
-                                    <span class="lang fr">Big Data</span>
-                                    <span class="lang en hidden">Big Data</span>
-                                </span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%;"></div>
+                                <div class="skill-progress" style="width: 85%;"></div>
                             </div>
                         </div>
                     </div>
@@ -1431,9 +1571,360 @@
                     <span class="lang en hidden">My Portfolio</span>
                 </h2>
                 <p class="section-subtitle fade-in-up">
-                    <span class="lang fr">Découvrez mes projets répartis par domaines d'expertise, alliant analyse de données, science des données et développement d'applications.</span>
-                    <span class="lang en hidden">Discover my projects categorized by expertise areas, combining data analysis, data science and application development.</span>
+                    <span class="lang fr">Découvrez mes projets répartis par domaines d'expertise, alliant analyse de données, Business Intelligence et solutions Fintech pour le secteur bancaire.</span>
+                    <span class="lang en hidden">Discover my projects categorized by expertise areas, combining data analysis, Business Intelligence and Fintech solutions for the banking sector.</span>
                 </p>
+
+                <!-- PROJET PHARE - CreditAI Bénin -->
+                <div class="portfolio-category fade-in-up" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%); border-radius: 20px; padding: 30px; margin-bottom: 60px; border: 2px solid rgba(245, 158, 11, 0.3);">
+                    <h3 style="color: #f59e0b;">
+                        <i class="fas fa-star"></i>
+                        <span class="lang fr">🏆 Projet Phare - Fintech & Inclusion Financière</span>
+                        <span class="lang en hidden">🏆 Featured Project - Fintech & Financial Inclusion</span>
+                    </h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item" data-category="fintech" style="grid-column: span 2; border: 2px solid rgba(245, 158, 11, 0.5);">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop" alt="CreditAI Bénin">
+                            <div class="portfolio-content">
+                                <h4 style="font-size: 24px; color: #f59e0b;">
+                                    <span class="lang fr">💳 CreditAI Bénin - Plateforme de Credit Scoring Alternatif</span>
+                                    <span class="lang en hidden">💳 CreditAI Benin - Alternative Credit Scoring Platform</span>
+                                </h4>
+                                <p style="font-size: 16px; line-height: 1.8;">
+                                    <span class="lang fr"><strong>Solution fintech complète</strong> permettant aux Béninois non-bancarisés d'obtenir un score de crédit basé sur leurs transactions <strong>Mobile Money</strong> (MTN MoMo, Moov Money, Celtiis). Le système comprend une <strong>application Android invisible (Ghost Agent)</strong> qui capture automatiquement les SMS transactionnels, un <strong>backend IA</strong> qui analyse les comportements financiers, et génère des <strong>rapports de solvabilité professionnels</strong> pour les institutions de microfinance.</span>
+                                    <span class="lang en hidden"><strong>Complete fintech solution</strong> enabling unbanked Beninese to obtain a credit score based on their <strong>Mobile Money</strong> transactions (MTN MoMo, Moov Money, Celtiis). The system includes an <strong>invisible Android application (Ghost Agent)</strong> that automatically captures transactional SMS, an <strong>AI backend</strong> that analyzes financial behaviors, and generates <strong>professional creditworthiness reports</strong> for microfinance institutions.</span>
+                                </p>
+                                
+                                <div style="background: rgba(239, 68, 68, 0.1); border-radius: 10px; padding: 15px; margin: 20px 0;">
+                                    <h5 style="color: #ef4444; margin-bottom: 10px;">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span class="lang fr">Problème résolu</span>
+                                        <span class="lang en hidden">Problem Solved</span>
+                                    </h5>
+                                    <ul style="color: var(--gray); margin-left: 20px;">
+                                        <li class="lang fr"><strong>65%</strong> des Béninois n'ont pas accès au crédit bancaire traditionnel</li>
+                                        <li class="lang fr">Absence d'historique bancaire classique pour évaluer la solvabilité</li>
+                                        <li class="lang fr">Les données Mobile Money existent mais ne sont pas exploitées pour l'inclusion financière</li>
+                                        <li class="lang fr">Les microfinances manquent d'outils fiables pour évaluer les petits emprunteurs</li>
+                                        <li class="lang en hidden"><strong>65%</strong> of Beninese don't have access to traditional bank credit</li>
+                                        <li class="lang en hidden">No traditional banking history to assess creditworthiness</li>
+                                        <li class="lang en hidden">Mobile Money data exists but isn't used for financial inclusion</li>
+                                        <li class="lang en hidden">Microfinance institutions lack reliable tools to evaluate small borrowers</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Architecture Diagram -->
+                                <div style="background: rgba(30, 41, 59, 0.5); border-radius: 12px; padding: 20px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 12px; overflow-x: auto;">
+                                    <div style="color: #94a3b8; margin-bottom: 10px; font-family: inherit;">
+                                        <span class="lang fr">📐 Architecture du système</span>
+                                        <span class="lang en hidden">📐 System Architecture</span>
+                                    </div>
+                                    <pre style="color: #f59e0b; margin: 0; white-space: pre;">┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Ghost Agent   │────▶│   Backend API   │────▶│   Rapport PDF   │
+│  (App Android)  │     │  (FastAPI + ML) │     │  Professionnel  │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+        │                       │                       │
+   Capture SMS            Scoring IA              QR Vérification
+   Mobile Money          Analyse profil            Graphiques</pre>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                                    <div style="background: rgba(168, 85, 247, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #a855f7;">
+                                        <i class="fab fa-android" style="color: #a855f7; font-size: 20px;"></i>
+                                        <strong style="color: #a855f7;"> Ghost Agent (Android)</strong>
+                                        <ul style="color: var(--gray); margin: 10px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">Application installée sur le téléphone du client</li>
+                                            <li class="lang fr">Capture automatique et silencieuse des SMS Mobile Money</li>
+                                            <li class="lang fr">Parsing intelligent des messages (montants, dates, types)</li>
+                                            <li class="lang fr">Fonctionne en arrière-plan sans intervention</li>
+                                            <li class="lang en hidden">Installed on customer's phone</li>
+                                            <li class="lang en hidden">Automatic silent capture of Mobile Money SMS</li>
+                                            <li class="lang en hidden">Intelligent message parsing (amounts, dates, types)</li>
+                                            <li class="lang en hidden">Works in background without intervention</li>
+                                        </ul>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #3b82f6;">
+                                        <i class="fas fa-robot" style="color: #3b82f6; font-size: 20px;"></i>
+                                        <strong style="color: #3b82f6;"> Moteur de Scoring IA</strong>
+                                        <ul style="color: var(--gray); margin: 10px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">Analyse de 4 dimensions : Régularité, Volume, Diversité, Stabilité</li>
+                                            <li class="lang fr">Score de 300 à 900 (modèle inspiré FICO adapté au Bénin)</li>
+                                            <li class="lang fr">Calcul de l'indice de confiance et du niveau de risque</li>
+                                            <li class="lang fr">Historique et évolution du score dans le temps</li>
+                                            <li class="lang en hidden">Analysis of 4 dimensions: Regularity, Volume, Diversity, Stability</li>
+                                            <li class="lang en hidden">Score from 300 to 900 (FICO-inspired model adapted to Benin)</li>
+                                            <li class="lang en hidden">Confidence index and risk level calculation</li>
+                                            <li class="lang en hidden">Score history and evolution over time</li>
+                                        </ul>
+                                    </div>
+                                    <div style="background: rgba(239, 68, 68, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #ef4444;">
+                                        <i class="fas fa-file-pdf" style="color: #ef4444; font-size: 20px;"></i>
+                                        <strong style="color: #ef4444;"> Rapports PDF Professionnels</strong>
+                                        <ul style="color: var(--gray); margin: 10px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">Documents 3 pages format institution financière</li>
+                                            <li class="lang fr">Graphiques dynamiques (évolution, radar profil, barres)</li>
+                                            <li class="lang fr">QR Code de vérification d'authenticité</li>
+                                            <li class="lang fr">Conformes aux standards bancaires</li>
+                                            <li class="lang en hidden">3-page documents in financial institution format</li>
+                                            <li class="lang en hidden">Dynamic charts (evolution, profile radar, bars)</li>
+                                            <li class="lang en hidden">QR Code for authenticity verification</li>
+                                            <li class="lang en hidden">Compliant with banking standards</li>
+                                        </ul>
+                                    </div>
+                                    <div style="background: rgba(37, 211, 102, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #25D366;">
+                                        <i class="fab fa-whatsapp" style="color: #25D366; font-size: 20px;"></i>
+                                        <strong style="color: #25D366;"> Bot WhatsApp</strong>
+                                        <ul style="color: var(--gray); margin: 10px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">Interface conversationnelle pour les clients</li>
+                                            <li class="lang fr">Consultation du score, téléchargement du rapport</li>
+                                            <li class="lang fr">Notifications et conseils personnalisés</li>
+                                            <li class="lang en hidden">Conversational interface for customers</li>
+                                            <li class="lang en hidden">Score consultation, report download</li>
+                                            <li class="lang en hidden">Notifications and personalized advice</li>
+                                        </ul>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #10b981;">
+                                        <i class="fas fa-shield-alt" style="color: #10b981; font-size: 20px;"></i>
+                                        <strong style="color: #10b981;"> Sécurité & Conformité</strong>
+                                        <ul style="color: var(--gray); margin: 10px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">Conformité APDP Bénin (Loi n°2017-20 du 20 avril 2018)</li>
+                                            <li class="lang fr">Consentement explicite obligatoire</li>
+                                            <li class="lang fr">Chiffrement des données sensibles</li>
+                                            <li class="lang fr">Droit d'accès, rectification et suppression</li>
+                                            <li class="lang en hidden">APDP Benin compliance (Law n°2017-20 of April 20, 2018)</li>
+                                            <li class="lang en hidden">Mandatory explicit consent</li>
+                                            <li class="lang en hidden">Encryption of sensitive data</li>
+                                            <li class="lang en hidden">Right of access, rectification and deletion</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Stack Technique Table -->
+                                <div style="margin: 25px 0;">
+                                    <h5 style="color: #8b5cf6; margin-bottom: 15px;">
+                                        <i class="fas fa-layer-group"></i>
+                                        <span class="lang fr">Stack Technique</span>
+                                        <span class="lang en hidden">Tech Stack</span>
+                                    </h5>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                                        <div style="background: rgba(168, 85, 247, 0.15); padding: 10px 15px; border-radius: 8px;">
+                                            <strong style="color: #a855f7;">Ghost Agent:</strong>
+                                            <span style="color: var(--gray); font-size: 13px;">Android (Kotlin), BroadcastReceiver, WorkManager, Retrofit</span>
+                                        </div>
+                                        <div style="background: rgba(59, 130, 246, 0.15); padding: 10px 15px; border-radius: 8px;">
+                                            <strong style="color: #3b82f6;">Backend API:</strong>
+                                            <span style="color: var(--gray); font-size: 13px;">Python 3.11, FastAPI, SQLAlchemy, PostgreSQL</span>
+                                        </div>
+                                        <div style="background: rgba(245, 158, 11, 0.15); padding: 10px 15px; border-radius: 8px;">
+                                            <strong style="color: #f59e0b;">Machine Learning:</strong>
+                                            <span style="color: var(--gray); font-size: 13px;">Pandas, NumPy, Scikit-learn</span>
+                                        </div>
+                                        <div style="background: rgba(239, 68, 68, 0.15); padding: 10px 15px; border-radius: 8px;">
+                                            <strong style="color: #ef4444;">PDF Generation:</strong>
+                                            <span style="color: var(--gray); font-size: 13px;">xhtml2pdf, Jinja2, Matplotlib, QRCode</span>
+                                        </div>
+                                        <div style="background: rgba(37, 211, 102, 0.15); padding: 10px 15px; border-radius: 8px;">
+                                            <strong style="color: #25D366;">WhatsApp Bot:</strong>
+                                            <span style="color: var(--gray); font-size: 13px;">WhatsApp Business API, Webhooks</span>
+                                        </div>
+                                        <div style="background: rgba(100, 116, 139, 0.15); padding: 10px 15px; border-radius: 8px;">
+                                            <strong style="color: #64748b;">DevOps:</strong>
+                                            <span style="color: var(--gray); font-size: 13px;">Docker, GitHub Actions</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Opérateurs Mobile Money -->
+                                <div style="background: rgba(245, 158, 11, 0.1); border-radius: 10px; padding: 15px; margin: 20px 0;">
+                                    <h5 style="color: #f59e0b; margin-bottom: 10px;">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span class="lang fr">Opérateurs Mobile Money supportés (Bénin)</span>
+                                        <span class="lang en hidden">Supported Mobile Money Operators (Benin)</span>
+                                    </h5>
+                                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                        <span style="background: #ffcc00; color: #000; padding: 8px 15px; border-radius: 20px; font-weight: 600;">MTN MoMo Bénin</span>
+                                        <span style="background: #0066b3; color: #fff; padding: 8px 15px; border-radius: 20px; font-weight: 600;">Moov Money</span>
+                                        <span style="background: #e63946; color: #fff; padding: 8px 15px; border-radius: 20px; font-weight: 600;">Celtiis Cash</span>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 20px 0;">
+                                    <span class="tag" style="background: rgba(124, 58, 237, 0.3);">Python 3.11</span>
+                                    <span class="tag" style="background: rgba(124, 58, 237, 0.3);">FastAPI</span>
+                                    <span class="tag" style="background: rgba(124, 58, 237, 0.3);">PostgreSQL</span>
+                                    <span class="tag" style="background: rgba(124, 58, 237, 0.3);">Scikit-learn</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">Android Kotlin</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">BroadcastReceiver</span>
+                                    <span class="tag" style="background: rgba(37, 211, 102, 0.3);">WhatsApp API</span>
+                                    <span class="tag" style="background: rgba(100, 116, 139, 0.3);">Docker</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.5); color: white;">Credit Scoring</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.5); color: white;">Fintech Bénin</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.5); color: white;">Inclusion Financière</span>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 25px 0; text-align: center;">
+                                    <div style="background: rgba(16, 185, 129, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(16, 185, 129, 0.3);">
+                                        <span style="font-size: 32px; font-weight: 800; color: #10b981; display: block;">5M+</span>
+                                        <span style="font-size: 12px; color: var(--gray); text-transform: uppercase;">
+                                            <span class="lang fr">Utilisateurs Mobile Money cibles</span>
+                                            <span class="lang en hidden">Target Mobile Money users</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(16, 185, 129, 0.3);">
+                                        <span style="font-size: 32px; font-weight: 800; color: #10b981; display: block;">&lt;5s</span>
+                                        <span style="font-size: 12px; color: var(--gray); text-transform: uppercase;">
+                                            <span class="lang fr">Génération du score</span>
+                                            <span class="lang en hidden">Score generation</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(16, 185, 129, 0.3);">
+                                        <span style="font-size: 32px; font-weight: 800; color: #10b981; display: block;">UEMOA</span>
+                                        <span style="font-size: 12px; color: var(--gray); text-transform: uppercase;">
+                                            <span class="lang fr">Expansion prévue (Phase 2)</span>
+                                            <span class="lang en hidden">Planned expansion (Phase 2)</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-links" style="justify-content: center; gap: 15px;">
+                                    <span class="tag" style="padding: 10px 20px; font-size: 14px;">
+                                        <a href="#" target="_blank" style="color:white;">
+                                            <i class="fab fa-github"></i>
+                                            <span class="lang fr">Code Source</span>
+                                            <span class="lang en hidden">Source Code</span>
+                                        </a>
+                                    </span>
+                                    <span class="tag" style="padding: 10px 20px; font-size: 14px; background: rgba(245, 158, 11, 0.5);">
+                                        <a href="#" target="_blank" style="color:white;">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <span class="lang fr">Demo API</span>
+                                            <span class="lang en hidden">API Demo</span>
+                                        </a>
+                                    </span>
+                                    <span class="tag" style="padding: 10px 20px; font-size: 14px; background: rgba(168, 85, 247, 0.5);">
+                                        <a href="#" target="_blank" style="color:white;">
+                                            <i class="fab fa-android"></i>
+                                            <span class="lang fr">APK Ghost Agent</span>
+                                            <span class="lang en hidden">Ghost Agent APK</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LiquidWatch - Surveillance Risque de Liquidité -->
+                <div class="portfolio-category fade-in-up" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%); border-radius: 20px; padding: 30px; margin-bottom: 60px; border: 2px solid rgba(0, 212, 255, 0.35);">
+                    <h3 style="color: #00d4ff;">
+                        <i class="fas fa-water"></i>
+                        <span class="lang fr">🏦 Surveillance Risque Bancaire — UEMOA</span>
+                        <span class="lang en hidden">🏦 Banking Risk Monitoring — UEMOA</span>
+                    </h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item" data-category="banking-risk" style="grid-column: span 2; border: 2px solid rgba(0, 212, 255, 0.45); background: linear-gradient(135deg, rgba(0, 212, 255, 0.07) 0%, rgba(6, 182, 212, 0.04) 100%);">
+                            <!-- Card sans image : placeholder visuel cohérent avec le design -->
+                            <div style="width:100%; height:180px; background: linear-gradient(135deg, rgba(0,212,255,0.15) 0%, rgba(6,182,212,0.08) 100%); display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(0,212,255,0.2);" aria-label="LiquidWatch — Surveillance du Risque de Liquidité">
+                                <div style="text-align:center;">
+                                    <i class="fas fa-water" style="font-size:56px; color:#00d4ff; opacity:0.85;"></i>
+                                    <div style="margin-top:12px; font-size:13px; color:rgba(0,212,255,0.7); letter-spacing:2px; text-transform:uppercase; font-weight:600;">Système de monitoring temps réel</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <h4 style="font-size:24px; color:#00d4ff;">
+                                    <i class="fas fa-shield-alt" style="margin-right:8px;"></i>
+                                    <span class="lang fr">💧 LiquidWatch — Système de Surveillance du Risque de Liquidité</span>
+                                    <span class="lang en hidden">💧 LiquidWatch — Liquidity Risk Monitoring System</span>
+                                </h4>
+                                <p style="font-size:15px; color:#94a3b8; margin:4px 0 18px; font-style:italic;">Banques Commerciales UEMOA · Proxy pays BCEAO / Banque Mondiale</p>
+
+                                <p style="font-size:15px; line-height:1.8;">
+                                    <span class="lang fr">
+                                        <strong>LiquidWatch</strong> est une plateforme de surveillance opérationnelle du <strong>risque de liquidité</strong> conçue pour les banques commerciales de la zone UEMOA. Elle agrège des indicateurs financiers issus des référentiels <strong>BCEAO et Banque Mondiale</strong>, génère des alertes en temps réel et produit des <strong>prévisions J+30</strong> par des modèles prédictifs IA. L'outil fournit aux directions de trésorerie un tableau de bord décisionnel unique intégrant surveillance opérationnelle, analyse prédictive et contexte macro-économique UEMOA.
+                                    </span>
+                                    <span class="lang en hidden">
+                                        <strong>LiquidWatch</strong> is an operational <strong>liquidity risk monitoring</strong> platform designed for commercial banks in the UEMOA zone. It aggregates financial indicators from <strong>BCEAO and World Bank</strong> references, generates real-time alerts and produces <strong>D+30 forecasts</strong> via AI predictive models. The tool provides treasury departments with a single decision-making dashboard integrating operational monitoring, predictive analysis and UEMOA macroeconomic context.
+                                    </span>
+                                </p>
+
+                                <!-- Impact métier -->
+                                <div style="background:rgba(0,212,255,0.07); border-radius:12px; padding:18px; margin:20px 0; border-left:4px solid #00d4ff;">
+                                    <h5 style="color:#00d4ff; margin-bottom:12px;">
+                                        <i class="fas fa-bullseye"></i>
+                                        <span class="lang fr"> Impact métier</span>
+                                        <span class="lang en hidden"> Business Impact</span>
+                                    </h5>
+                                    <ul style="color:var(--gray); margin-left:20px; font-size:14px; line-height:2;">
+                                        <li><span class="lang fr">✅ <strong>Détection précoce</strong> du risque de liquidité avant seuil réglementaire</span><span class="lang en hidden">✅ <strong>Early detection</strong> of liquidity risk before regulatory threshold</span></li>
+                                        <li><span class="lang fr">✅ <strong>Alertes opérationnelles</strong> et prévisions J+30 pour la trésorerie</span><span class="lang en hidden">✅ <strong>Operational alerts</strong> and D+30 forecasts for treasury</span></li>
+                                        <li><span class="lang fr">✅ <strong>Dashboard décisionnel</strong> multi-dimensionnel pour la direction financière</span><span class="lang en hidden">✅ <strong>Multi-dimensional decision dashboard</strong> for financial management</span></li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3 dashboards live -->
+                                <div style="margin:20px 0;">
+                                    <h5 style="color:#06b6d4; margin-bottom:14px;">
+                                        <i class="fas fa-desktop"></i>
+                                        <span class="lang fr"> Dashboards Live (Grafana)</span>
+                                        <span class="lang en hidden"> Live Dashboards (Grafana)</span>
+                                    </h5>
+                                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:12px;">
+                                        <a href="https://liquidwatch.grafana.net/goto/fff0mn2xcwhdse?orgId=stacks-1546089" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le dashboard Surveillance Opérationnelle LiquidWatch" style="text-decoration:none;">
+                                            <div style="background:rgba(0,212,255,0.1); padding:14px 18px; border-radius:10px; border:1px solid rgba(0,212,255,0.3); transition:border-color 0.2s;" onmouseover="this.style.borderColor='#00d4ff'" onmouseout="this.style.borderColor='rgba(0,212,255,0.3)'">
+                                                <i class="fas fa-tachometer-alt" style="color:#00d4ff; font-size:18px;"></i>
+                                                <strong style="color:#00d4ff; display:block; margin:6px 0 4px; font-size:14px;">Surveillance Opérationnelle</strong>
+                                                <span style="color:var(--gray); font-size:12px;">Indicateurs LCR/NSFR · Alertes temps réel</span>
+                                                <span style="display:block; margin-top:8px; font-size:11px; color:#00d4ff; opacity:0.8;">Voir le dashboard →</span>
+                                            </div>
+                                        </a>
+                                        <a href="https://liquidwatch.grafana.net/goto/aff0mr29i58g0b?orgId=stacks-1546089" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le dashboard Analyse Prédictive IA LiquidWatch" style="text-decoration:none;">
+                                            <div style="background:rgba(124,58,237,0.1); padding:14px 18px; border-radius:10px; border:1px solid rgba(124,58,237,0.3); transition:border-color 0.2s;" onmouseover="this.style.borderColor='#7c3aed'" onmouseout="this.style.borderColor='rgba(124,58,237,0.3)'">
+                                                <i class="fas fa-brain" style="color:#7c3aed; font-size:18px;"></i>
+                                                <strong style="color:#7c3aed; display:block; margin:6px 0 4px; font-size:14px;">Analyse Prédictive IA</strong>
+                                                <span style="color:var(--gray); font-size:12px;">Prévisions J+30 · Modèles ML</span>
+                                                <span style="display:block; margin-top:8px; font-size:11px; color:#7c3aed; opacity:0.8;">Voir le dashboard →</span>
+                                            </div>
+                                        </a>
+                                        <a href="https://liquidwatch.grafana.net/goto/cff0ms27e1se8d?orgId=stacks-1546089" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir le dashboard Contexte Macro UEMOA LiquidWatch" style="text-decoration:none;">
+                                            <div style="background:rgba(6,255,165,0.07); padding:14px 18px; border-radius:10px; border:1px solid rgba(6,255,165,0.25); transition:border-color 0.2s;" onmouseover="this.style.borderColor='#06ffa5'" onmouseout="this.style.borderColor='rgba(6,255,165,0.25)'">
+                                                <i class="fas fa-globe-africa" style="color:#06ffa5; font-size:18px;"></i>
+                                                <strong style="color:#06ffa5; display:block; margin:6px 0 4px; font-size:14px;">Contexte Macro UEMOA</strong>
+                                                <span style="color:var(--gray); font-size:12px;">Indicateurs BCEAO · Banque Mondiale</span>
+                                                <span style="display:block; margin-top:8px; font-size:11px; color:#06ffa5; opacity:0.8;">Voir le dashboard →</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Stack technique -->
+                                <div class="portfolio-tags" style="margin:20px 0;">
+                                    <span class="tag" style="background:rgba(0,212,255,0.25);">Python</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.25);">PostgreSQL</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.25);">Grafana</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.25);">Docker</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.25);">Supabase</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.25);">Render</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.4); color:#fff;">UEMOA · BCEAO</span>
+                                    <span class="tag" style="background:rgba(0,212,255,0.4); color:#fff;">Risque Liquidité</span>
+                                </div>
+
+                                <!-- Boutons CTA -->
+                                <div class="portfolio-links" style="justify-content:flex-start; gap:12px; flex-wrap:wrap; margin-top:10px;">
+                                    <a href="https://liquidwatch.grafana.net/goto/fff0mn2xcwhdse?orgId=stacks-1546089" target="_blank" rel="noopener noreferrer" aria-label="Voir la démo live LiquidWatch — Surveillance Opérationnelle" class="tag" style="padding:10px 22px; font-size:14px; background:rgba(0,212,255,0.5); color:#fff; text-decoration:none; border-radius:8px; font-weight:600; display:inline-flex; align-items:center; gap:8px;">
+                                        <i class="fas fa-play-circle"></i>
+                                        <span class="lang fr">Voir la démo</span>
+                                        <span class="lang en hidden">Live Demo</span>
+                                    </a>
+                                    <a href="https://github.com/Anjorin007/LiquidWatch" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source LiquidWatch sur GitHub" class="tag" style="padding:10px 22px; font-size:14px; background:rgba(255,255,255,0.08); color:#fff; text-decoration:none; border-radius:8px; font-weight:600; display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.15);">
+                                        <i class="fab fa-github"></i>
+                                        <span class="lang fr">Voir le code</span>
+                                        <span class="lang en hidden">View Code</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Data Analysis & Visualization Section -->
                 <div class="portfolio-category fade-in-up">
@@ -1443,28 +1934,159 @@
                         <span class="lang en hidden">Data Analysis & Visualization</span>
                     </h3>
                     <div class="portfolio-grid">
-                        <div class="portfolio-item" data-category="data-analysis">
+                        <!-- PROJET POWER BI INNOVANT -->
+                        <div class="portfolio-item" data-category="bi" style="grid-column: span 2; border: 2px solid rgba(59, 130, 246, 0.4); background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Customer 360 Intelligence">
+                            <div class="portfolio-content">
+                                <h4 style="font-size: 22px; color: #3b82f6;">
+                                    <i class="fas fa-brain" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">🎯 Customer 360 Intelligence - Dashboard Prédictif Bancaire</span>
+                                    <span class="lang en hidden">🎯 Customer 360 Intelligence - Banking Predictive Dashboard</span>
+                                </h4>
+                                <p style="font-size: 15px; line-height: 1.7;">
+                                    <span class="lang fr"><strong>Dashboard Power BI avancé</strong> qui va au-delà des simples KPIs. Combine <strong>segmentation RFM dynamique</strong>, <strong>prédiction de churn en temps réel</strong> (modèle ML intégré via Python), <strong>détection d'anomalies</strong> sur les transactions, et <strong>recommandations automatiques</strong> de produits bancaires. Le tableau de bord s'adapte au profil de l'utilisateur (conseiller, directeur agence, direction générale).</span>
+                                    <span class="lang en hidden"><strong>Advanced Power BI dashboard</strong> going beyond simple KPIs. Combines <strong>dynamic RFM segmentation</strong>, <strong>real-time churn prediction</strong> (ML model integrated via Python), <strong>anomaly detection</strong> on transactions, and <strong>automatic recommendations</strong> for banking products. The dashboard adapts to user profile (advisor, branch manager, executive).</span>
+                                </p>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 20px 0;">
+                                    <div style="background: rgba(239, 68, 68, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <i class="fas fa-user-slash" style="color: #ef4444;"></i>
+                                        <strong style="color: #ef4444;"> Prédiction Churn</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">ML embarqué (Python visuals) - Score de risque d'attrition par client</span>
+                                            <span class="lang en hidden">Embedded ML (Python visuals) - Attrition risk score per customer</span>
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #10b981;">
+                                        <i class="fas fa-layer-group" style="color: #10b981;"></i>
+                                        <strong style="color: #10b981;"> Segmentation RFM+</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">Récence, Fréquence, Montant + Ancienneté + Produits détenus</span>
+                                            <span class="lang en hidden">Recency, Frequency, Monetary + Tenure + Products held</span>
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i>
+                                        <strong style="color: #f59e0b;"> Détection Anomalies</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">Transactions inhabituelles, pics d'activité, comportements suspects</span>
+                                            <span class="lang en hidden">Unusual transactions, activity spikes, suspicious behaviors</span>
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(139, 92, 246, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #8b5cf6;">
+                                        <i class="fas fa-lightbulb" style="color: #8b5cf6;"></i>
+                                        <strong style="color: #8b5cf6;"> Next Best Action</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">Recommandations produits automatiques basées sur le profil</span>
+                                            <span class="lang en hidden">Automatic product recommendations based on profile</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div style="background: rgba(30, 41, 59, 0.4); border-radius: 10px; padding: 15px; margin: 15px 0;">
+                                    <h5 style="color: #3b82f6; margin-bottom: 10px;">
+                                        <i class="fas fa-magic"></i>
+                                        <span class="lang fr">Ce qui le rend unique (pas un dashboard classique)</span>
+                                        <span class="lang en hidden">What makes it unique (not a classic dashboard)</span>
+                                    </h5>
+                                    <ul style="color: var(--gray); margin-left: 20px; font-size: 13px;">
+                                        <li class="lang fr"><strong>Row-Level Security (RLS)</strong> : Chaque utilisateur ne voit que ses clients/agences</li>
+                                        <li class="lang fr"><strong>Drill-through dynamique</strong> : Du portefeuille global → segment → client individuel → historique transactions</li>
+                                        <li class="lang fr"><strong>Alertes intelligentes</strong> : Notifications automatiques quand un client "champion" devient "à risque"</li>
+                                        <li class="lang fr"><strong>Storytelling intégré</strong> : Insights auto-générés avec commentaires DAX dynamiques</li>
+                                        <li class="lang fr"><strong>Mobile-first</strong> : Version optimisée pour les conseillers sur tablette en rendez-vous client</li>
+                                        <li class="lang en hidden"><strong>Row-Level Security (RLS)</strong>: Each user only sees their clients/branches</li>
+                                        <li class="lang en hidden"><strong>Dynamic drill-through</strong>: From global portfolio → segment → individual client → transaction history</li>
+                                        <li class="lang en hidden"><strong>Smart alerts</strong>: Automatic notifications when a "champion" customer becomes "at risk"</li>
+                                        <li class="lang en hidden"><strong>Integrated storytelling</strong>: Auto-generated insights with dynamic DAX comments</li>
+                                        <li class="lang en hidden"><strong>Mobile-first</strong>: Optimized version for advisors on tablet during client meetings</li>
+                                    </ul>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 15px 0;">
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.4);">Power BI</span>
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.4);">DAX Avancé</span>
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.4);">Power Query M</span>
+                                    <span class="tag" style="background: rgba(139, 92, 246, 0.4);">Python Visuals</span>
+                                    <span class="tag" style="background: rgba(139, 92, 246, 0.4);">ML Integration</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.4);">RLS Security</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.4);">RFM Analysis</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.4);">Churn Prediction</span>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; text-align: center;">
+                                    <div style="background: rgba(59, 130, 246, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #3b82f6; display: block;">50+</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Mesures DAX</span>
+                                            <span class="lang en hidden">DAX Measures</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #3b82f6; display: block;">8</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Pages interactives</span>
+                                            <span class="lang en hidden">Interactive pages</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #3b82f6; display: block;">95%</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Précision churn</span>
+                                            <span class="lang en hidden">Churn accuracy</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #3b82f6; display: block;">&lt;2s</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Temps de refresh</span>
+                                            <span class="lang en hidden">Refresh time</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item" data-category="data-analysis" style="border: 2px solid rgba(16, 185, 129, 0.3); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(245, 158, 11, 0.05) 100%);">
                             <img src="assets/img/portfolio/EDA.png" alt="Analyse Exploratoire Crédit">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Analyse Exploratoire Crédit</span>
-                                    <span class="lang en hidden">Credit Exploratory Data Analysis</span>
+                                <h4 style="font-size: 20px; color: #10b981;">
+                                    <i class="fas fa-search-dollar" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">🔍 Analyse Exploratoire Crédit (EDA)</span>
+                                    <span class="lang en hidden">🔍 Credit Exploratory Data Analysis (EDA)</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Nettoyage, analyse exploratoire et visualisations des données de crédit pour comprendre les facteurs clés de risque.</span>
-                                    <span class="lang en hidden">Cleaning, exploratory analysis and visualizations of credit data to identify key risk factors.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Analyse complète d'un dataset de <strong>300K+ demandes de crédit</strong>. Nettoyage des données, détection d'outliers, analyse des corrélations et identification des <strong>facteurs clés de défaut</strong>.</span>
+                                    <span class="lang en hidden">Complete analysis of a <strong>300K+ credit applications</strong> dataset. Data cleaning, outlier detection, correlation analysis and identification of <strong>key default factors</strong>.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Pandas</span>
-                                    <span class="tag">Matplotlib</span>
-                                    <span class="tag">Seaborn</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 12px 0;">
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px; border-radius: 6px; text-align: center;">
+                                        <span style="font-size: 16px; font-weight: 700; color: #10b981;">300K+</span>
+                                        <p style="font-size: 9px; color: var(--gray); margin: 0;">Enregistrements</p>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px; border-radius: 6px; text-align: center;">
+                                        <span style="font-size: 16px; font-weight: 700; color: #10b981;">120+</span>
+                                        <p style="font-size: 9px; color: var(--gray); margin: 0;">Variables</p>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 8px; border-radius: 6px; text-align: center;">
+                                        <span style="font-size: 16px; font-weight: 700; color: #10b981;">15</span>
+                                        <p style="font-size: 9px; color: var(--gray); margin: 0;">Visualisations</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">Python</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">Pandas</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">Matplotlib</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">Seaborn</span>
                                 </div>
                                 <div class="portfolio-links">
-                                    <span class="tag">
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.5);">
                                         <a href="https://nbviewer.org/github/Anjorin007/riskscore-pro-app/blob/main/risk-score-pro.ipynb" target="_blank" style="color:white;">
-                                            <span class="lang fr">Notebook</span>
-                                            <span class="lang en hidden">Notebook</span>
+                                            <i class="fas fa-book-open"></i>
+                                            <span class="lang fr">Voir Notebook</span>
+                                            <span class="lang en hidden">View Notebook</span>
                                         </a>
                                     </span>
                                 </div>
@@ -1481,62 +2103,162 @@
                         <span class="lang en hidden">Data Science & Machine Learning</span>
                     </h3>
                     <div class="portfolio-grid">
-                        <div class="portfolio-item" data-category="data-science">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Détection de Fraude">
+                        <!-- Détection de Fraude Bancaire - Version détaillée -->
+                        <div class="portfolio-item" data-category="data-science" style="grid-column: span 2; border: 2px solid rgba(239, 68, 68, 0.3); background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop" alt="Détection de Fraude">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Détection de Fraude Bancaire</span>
-                                    <span class="lang en hidden">Bank Fraud Detection</span>
+                                <h4 style="font-size: 22px; color: #ef4444;">
+                                    <i class="fas fa-shield-alt" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">🚨 Détection de Fraude Bancaire en Temps Réel</span>
+                                    <span class="lang en hidden">🚨 Real-Time Bank Fraud Detection</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Modèle ML avancé utilisant Random Forest et XGBoost pour détecter les transactions frauduleuses en temps réel.</span>
-                                    <span class="lang en hidden">Advanced ML model using Random Forest and XGBoost to detect fraudulent transactions in real-time.</span>
+                                <p style="font-size: 15px; line-height: 1.7;">
+                                    <span class="lang fr"><strong>Système de détection de fraude</strong> utilisant un ensemble de modèles ML (Random Forest, XGBoost, Isolation Forest) pour identifier les transactions suspectes en <strong>temps réel</strong>. Le système analyse les patterns comportementaux, les anomalies géographiques et temporelles pour attribuer un <strong>score de risque</strong> à chaque transaction.</span>
+                                    <span class="lang en hidden"><strong>Fraud detection system</strong> using an ensemble of ML models (Random Forest, XGBoost, Isolation Forest) to identify suspicious transactions in <strong>real-time</strong>. The system analyzes behavioral patterns, geographic and temporal anomalies to assign a <strong>risk score</strong> to each transaction.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Scikit-learn</span>
-                                    <span class="tag">XGBoost</span>
-                                    <span class="tag">Flask</span>
+                                
+                                <div style="background: rgba(239, 68, 68, 0.1); border-radius: 10px; padding: 15px; margin: 15px 0;">
+                                    <h5 style="color: #ef4444; margin-bottom: 10px;">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span class="lang fr">Problématique</span>
+                                        <span class="lang en hidden">Problem Statement</span>
+                                    </h5>
+                                    <ul style="color: var(--gray); margin-left: 20px; font-size: 13px;">
+                                        <li class="lang fr">Les banques perdent des milliards chaque année en fraudes non détectées</li>
+                                        <li class="lang fr">Les règles statiques génèrent trop de faux positifs (80%+)</li>
+                                        <li class="lang fr">Besoin d'une détection en <5 secondes pour bloquer les transactions</li>
+                                        <li class="lang en hidden">Banks lose billions yearly in undetected fraud</li>
+                                        <li class="lang en hidden">Static rules generate too many false positives (80%+)</li>
+                                        <li class="lang en hidden">Need detection in <5 seconds to block transactions</li>
+                                    </ul>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 15px 0;">
+                                    <div style="background: rgba(239, 68, 68, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <i class="fas fa-brain" style="color: #ef4444;"></i>
+                                        <strong style="color: #ef4444;"> Ensemble ML</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">Random Forest + XGBoost + Isolation Forest voting</span>
+                                            <span class="lang en hidden">Random Forest + XGBoost + Isolation Forest voting</span>
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <i class="fas fa-clock" style="color: #f59e0b;"></i>
+                                        <strong style="color: #f59e0b;"> Temps Réel</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">API REST Flask avec prédiction <100ms</span>
+                                            <span class="lang en hidden">Flask REST API with <100ms prediction</span>
+                                        </p>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #10b981;">
+                                        <i class="fas fa-chart-line" style="color: #10b981;"></i>
+                                        <strong style="color: #10b981;"> Feature Engineering</strong>
+                                        <p style="font-size: 12px; color: var(--gray); margin: 5px 0 0 0;">
+                                            <span class="lang fr">50+ features (vélocité, géoloc, historique)</span>
+                                            <span class="lang en hidden">50+ features (velocity, geoloc, history)</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 15px 0;">
+                                    <span class="tag" style="background: rgba(239, 68, 68, 0.3);">Python</span>
+                                    <span class="tag" style="background: rgba(239, 68, 68, 0.3);">Scikit-learn</span>
+                                    <span class="tag" style="background: rgba(239, 68, 68, 0.3);">XGBoost</span>
+                                    <span class="tag" style="background: rgba(239, 68, 68, 0.3);">Flask</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">SMOTE</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">Imbalanced-learn</span>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0; text-align: center;">
+                                    <div style="background: rgba(239, 68, 68, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #ef4444; display: block;">98.5%</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Précision (AUC-ROC)</span>
+                                            <span class="lang en hidden">Accuracy (AUC-ROC)</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(239, 68, 68, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #ef4444; display: block;">&lt;100ms</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Latence API</span>
+                                            <span class="lang en hidden">API Latency</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(239, 68, 68, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 24px; font-weight: 800; color: #ef4444; display: block;">-70%</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Faux positifs</span>
+                                            <span class="lang en hidden">False positives</span>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="portfolio-item" data-category="data-science">
+                        <!-- Scoring Crédit XGBoost - Version détaillée -->
+                        <div class="portfolio-item" data-category="data-science" style="border: 2px solid rgba(139, 92, 246, 0.3); background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);">
                             <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop" alt="Scoring Crédit ML">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Scoring Crédit avec XGBoost</span>
-                                    <span class="lang en hidden">Credit Scoring with XGBoost</span>
+                                <h4 style="font-size: 20px; color: #8b5cf6;">
+                                    <i class="fas fa-calculator" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">📊 Scoring Crédit Explicable (XGBoost + SHAP)</span>
+                                    <span class="lang en hidden">📊 Explainable Credit Scoring (XGBoost + SHAP)</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Modèle de Machine Learning (XGBoost) avec interprétabilité via SHAP et recommandations automatiques pour le scoring client.</span>
-                                    <span class="lang en hidden">Machine Learning model (XGBoost) with SHAP interpretability and automated client scoring recommendations.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Modèle de scoring avec <strong>interprétabilité SHAP</strong> pour expliquer chaque décision. Génération automatique de <strong>recommandations personnalisées</strong> via LLM (Cohere) pour améliorer le score client.</span>
+                                    <span class="lang en hidden">Scoring model with <strong>SHAP interpretability</strong> to explain each decision. Automatic generation of <strong>personalized recommendations</strong> via LLM (Cohere) to improve customer score.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">XGBoost</span>
-                                    <span class="tag">SHAP</span>
-                                    <span class="tag">Cohere</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(139, 92, 246, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #8b5cf6;">92%</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Accuracy</p>
+                                    </div>
+                                    <div style="background: rgba(139, 92, 246, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #8b5cf6;">100%</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Explicable</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(139, 92, 246, 0.3);">XGBoost</span>
+                                    <span class="tag" style="background: rgba(139, 92, 246, 0.3);">SHAP</span>
+                                    <span class="tag" style="background: rgba(139, 92, 246, 0.3);">Cohere LLM</span>
+                                    <span class="tag" style="background: rgba(139, 92, 246, 0.3);">Python</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="portfolio-item" data-category="data-science">
+                        <!-- NLP Sentiment - Version détaillée -->
+                        <div class="portfolio-item" data-category="data-science" style="border: 2px solid rgba(16, 185, 129, 0.3); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);">
                             <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop" alt="NLP Sentiment">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Analyse de Sentiment NLP</span>
-                                    <span class="lang en hidden">NLP Sentiment Analysis</span>
+                                <h4 style="font-size: 20px; color: #10b981;">
+                                    <i class="fas fa-comment-dots" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">💬 Analyse de Sentiment Financier (NLP)</span>
+                                    <span class="lang en hidden">💬 Financial Sentiment Analysis (NLP)</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Modèle de traitement du langage naturel pour analyser les sentiments sur les réseaux sociaux financiers.</span>
-                                    <span class="lang en hidden">Natural language processing model to analyze sentiment on financial social networks.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Modèle <strong>BERT fine-tuné</strong> sur données financières (actualités, tweets, rapports) pour détecter le sentiment marché. API FastAPI pour intégration temps réel.</span>
+                                    <span class="lang en hidden"><strong>Fine-tuned BERT</strong> model on financial data (news, tweets, reports) to detect market sentiment. FastAPI API for real-time integration.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">BERT</span>
-                                    <span class="tag">Transformers</span>
-                                    <span class="tag">spaCy</span>
-                                    <span class="tag">FastAPI</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #10b981;">89%</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">F1-Score</p>
+                                    </div>
+                                    <div style="background: rgba(16, 185, 129, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #10b981;">3</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Classes (Pos/Neg/Neutre)</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">BERT</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">Transformers</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">spaCy</span>
+                                    <span class="tag" style="background: rgba(16, 185, 129, 0.3);">FastAPI</span>
                                 </div>
                             </div>
                         </div>
@@ -1551,49 +2273,87 @@
                         <span class="lang en hidden">Developed Applications</span>
                     </h3>
                     <div class="portfolio-grid">
-                        <div class="portfolio-item" data-category="applications">
+                        <!-- Dashboard Scoring Crédit - Version détaillée -->
+                        <div class="portfolio-item" data-category="applications" style="border: 2px solid rgba(245, 158, 11, 0.3); background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(239, 68, 68, 0.05) 100%);">
                             <img src="assets/img/portfolio/Application.png" alt="Dashboard Crédit">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Dashboard Scoring Crédit</span>
-                                    <span class="lang en hidden">Credit Scoring Dashboard</span>
+                                <h4 style="font-size: 20px; color: #f59e0b;">
+                                    <i class="fas fa-tachometer-alt" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">⚡ RiskScore Pro - Application Streamlit</span>
+                                    <span class="lang en hidden">⚡ RiskScore Pro - Streamlit Application</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Application Streamlit interactive pour évaluer le risque de crédit et fournir des recommandations en temps réel.</span>
-                                    <span class="lang en hidden">Interactive Streamlit app to evaluate credit risk and provide real-time recommendations.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Application web <strong>full-stack</strong> permettant d'évaluer le risque de crédit d'un client en temps réel. Interface intuitive avec visualisations interactives, historique des évaluations et export des rapports.</span>
+                                    <span class="lang en hidden"><strong>Full-stack</strong> web application to evaluate customer credit risk in real-time. Intuitive interface with interactive visualizations, evaluation history and report export.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Streamlit</span>
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Heroku</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <i class="fas fa-users" style="color: #f59e0b;"></i>
+                                        <strong style="color: #f59e0b; font-size: 12px;"> Multi-utilisateurs</strong>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <i class="fas fa-chart-pie" style="color: #f59e0b;"></i>
+                                        <strong style="color: #f59e0b; font-size: 12px;"> Visualisations</strong>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                        <i class="fas fa-file-export" style="color: #f59e0b;"></i>
+                                        <strong style="color: #f59e0b; font-size: 12px;"> Export PDF</strong>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">Streamlit</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">Python</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">Plotly</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">Heroku</span>
                                 </div>
                                 <div class="portfolio-links">
-                                    <span class="tag">
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.5);">
                                         <a href="https://riskscore-pro-app.streamlit.app/" target="_blank" style="color:white">
-                                            <span class="lang fr">Application</span>
-                                            <span class="lang en hidden">App</span>
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <span class="lang fr">Voir l'app</span>
+                                            <span class="lang en hidden">View App</span>
                                         </a>
                                     </span>
                                 </div>    
                             </div>
                         </div>
 
-                        <div class="portfolio-item" data-category="applications">
+                        <!-- Dashboard Trading Crypto - Version détaillée -->
+                        <div class="portfolio-item" data-category="applications" style="border: 2px solid rgba(59, 130, 246, 0.3); background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);">
                             <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&h=300&fit=crop" alt="Dashboard Crypto">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Dashboard Trading Crypto</span>
-                                    <span class="lang en hidden">Crypto Trading Dashboard</span>
+                                <h4 style="font-size: 20px; color: #3b82f6;">
+                                    <i class="fab fa-bitcoin" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">📈 CryptoWatch - Trading Dashboard</span>
+                                    <span class="lang en hidden">📈 CryptoWatch - Trading Dashboard</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Interface de trading temps réel avec indicateurs techniques et alertes automatisées.</span>
-                                    <span class="lang en hidden">Real-time trading interface with technical indicators and automated alerts.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Interface de trading <strong>temps réel</strong> avec WebSocket pour les flux de données. Indicateurs techniques (RSI, MACD, Bollinger), alertes automatisées et backtesting de stratégies.</span>
+                                    <span class="lang en hidden"><strong>Real-time</strong> trading interface with WebSocket for data streams. Technical indicators (RSI, MACD, Bollinger), automated alerts and strategy backtesting.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">D3.js</span>
-                                    <span class="tag">WebSocket</span>
-                                    <span class="tag">Node.js</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(59, 130, 246, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #3b82f6;">
+                                        <i class="fas fa-bolt" style="color: #3b82f6;"></i>
+                                        <strong style="color: #3b82f6; font-size: 12px;"> Real-time WebSocket</strong>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #3b82f6;">
+                                        <i class="fas fa-bell" style="color: #3b82f6;"></i>
+                                        <strong style="color: #3b82f6; font-size: 12px;"> Alertes Prix</strong>
+                                    </div>
+                                    <div style="background: rgba(59, 130, 246, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #3b82f6;">
+                                        <i class="fas fa-history" style="color: #3b82f6;"></i>
+                                        <strong style="color: #3b82f6; font-size: 12px;"> Backtesting</strong>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.3);">React</span>
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.3);">D3.js</span>
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.3);">WebSocket</span>
+                                    <span class="tag" style="background: rgba(59, 130, 246, 0.3);">Node.js</span>
                                 </div>
                             </div>
                         </div>
@@ -1608,42 +2368,70 @@
                         <span class="lang en hidden">Signal & Image Processing</span>
                     </h3>
                     <div class="portfolio-grid">
-                        <div class="portfolio-item" data-category="signal-image">
-                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop" alt="Traitement Image">
+                        <!-- Classification Images Médicales - Version détaillée -->
+                        <div class="portfolio-item" data-category="signal-image" style="border: 2px solid rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(236, 72, 153, 0.05) 100%);">
+                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=300&fit=crop" alt="Traitement Image">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Classification d'Images Médicales</span>
-                                    <span class="lang en hidden">Medical Image Classification</span>
+                                <h4 style="font-size: 20px; color: #a855f7;">
+                                    <i class="fas fa-x-ray" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">🏥 Classification d'Images Médicales (CNN)</span>
+                                    <span class="lang en hidden">🏥 Medical Image Classification (CNN)</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Application de réseaux de neurones convolutifs (CNN) pour la classification d'images radiologiques.</span>
-                                    <span class="lang en hidden">Application of convolutional neural networks (CNN) for radiological image classification.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Réseau de neurones convolutif <strong>ResNet-50 fine-tuné</strong> pour la classification d'images radiologiques pulmonaires (normal, pneumonie, COVID-19). Data augmentation et transfer learning.</span>
+                                    <span class="lang en hidden"><strong>Fine-tuned ResNet-50</strong> convolutional neural network for lung radiological image classification (normal, pneumonia, COVID-19). Data augmentation and transfer learning.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">TensorFlow</span>
-                                    <span class="tag">OpenCV</span>
-                                    <span class="tag">CNN</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(168, 85, 247, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #a855f7;">96%</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Accuracy</p>
+                                    </div>
+                                    <div style="background: rgba(168, 85, 247, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #a855f7;">15K+</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Images traitées</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">TensorFlow</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">ResNet-50</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">OpenCV</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">Keras</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="portfolio-item" data-category="signal-image">
+                        <!-- Analyse Signaux Biomédicaux - Version détaillée -->
+                        <div class="portfolio-item" data-category="signal-image" style="border: 2px solid rgba(6, 182, 212, 0.3); background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);">
                             <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&h=300&fit=crop" alt="Traitement Signal">
                             <div class="portfolio-content">
-                                <h4>
-                                    <span class="lang fr">Analyse de Signaux Biomédicaux</span>
-                                    <span class="lang en hidden">Biomedical Signal Analysis</span>
+                                <h4 style="font-size: 20px; color: #06b6d4;">
+                                    <i class="fas fa-heartbeat" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">🧠 Analyse de Signaux EEG</span>
+                                    <span class="lang en hidden">🧠 EEG Signal Analysis</span>
                                 </h4>
-                                <p>
-                                    <span class="lang fr">Traitement et analyse de signaux EEG pour la détection d'anomalies neurologiques.</span>
-                                    <span class="lang en hidden">Processing and analysis of EEG signals for neurological anomaly detection.</span>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Pipeline de traitement de signaux EEG pour la <strong>détection d'anomalies neurologiques</strong>. Filtrage, extraction de features (FFT, ondelettes) et classification par SVM/Random Forest.</span>
+                                    <span class="lang en hidden">EEG signal processing pipeline for <strong>neurological anomaly detection</strong>. Filtering, feature extraction (FFT, wavelets) and SVM/Random Forest classification.</span>
                                 </p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">SciPy</span>
-                                    <span class="tag">Signal Processing</span>
-                                    <span class="tag">ML</span>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #06b6d4;">94%</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Sensibilité</p>
+                                    </div>
+                                    <div style="background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 8px; text-align: center;">
+                                        <span style="font-size: 20px; font-weight: 700; color: #06b6d4;">50+</span>
+                                        <p style="font-size: 10px; color: var(--gray); margin: 0;">Features extraites</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">Python</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">SciPy</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">MNE-Python</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">PyWavelets</span>
                                 </div>
                             </div>
                         </div>
@@ -1876,8 +2664,8 @@
         // Typed Text Effect
         const typedTextElement = document.getElementById('typed-text');
         const texts = {
-            fr: ['Data Analyst', 'Data Scientist Junior', 'Passionné d\'IA', 'Spécialiste Data Visualization', 'Développeur d\'Applications Data'],
-            en: ['Data Analyst', 'Junior Data Scientist', 'AI Enthusiast', 'Data Visualization Specialist', 'Data Applications Developer'],
+            fr: ['Data Analyst BI', 'Credit Scoring', 'BI Engineer Fintech', 'Power BI & SQL', 'Analyste Risque Bancaire'],
+            en: ['BI Data Analyst', 'Credit Scoring', 'Fintech BI Engineer', 'Power BI & SQL', 'Banking Risk Analyst'],
         };
         
         let textIndex = 0;
