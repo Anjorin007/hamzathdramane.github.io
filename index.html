@@ -1070,6 +1070,214 @@
         .lang.hidden {
             display: none !important;
         }
+
+        /* ── Project Status Badges ─────────────────── */
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .project-status .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .status-dev  { background: rgba(245,158,11,0.15); color: #f59e0b; border: 1px solid rgba(245,158,11,0.4); }
+        .status-dev .dot  { background: #f59e0b; animation: pulseDot 1.4s ease-in-out infinite; }
+        .status-live { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.4); }
+        .status-live .dot { background: #10b981; animation: pulseDot 2s ease-in-out infinite; }
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        /* ── Portfolio Filter Tabs ─────────────────── */
+        .portfolio-filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+        .filter-btn {
+            padding: 9px 20px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.04);
+            color: var(--gray);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .filter-btn:hover {
+            background: rgba(0,212,255,0.08);
+            color: var(--primary);
+            border-color: rgba(0,212,255,0.35);
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(0,212,255,0.25);
+        }
+        .filter-btn .cnt {
+            background: rgba(255,255,255,0.22);
+            padding: 1px 7px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .portfolio-category.cat-hidden { display: none !important; }
+
+        /* ── Custom Scrollbar ───────────────────── */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--primary), var(--secondary)); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        /* ── Text Selection ─────────────────────────── */
+        ::selection { background: rgba(0,212,255,0.25); color: #fff; }
+
+        /* ── CV Download Button in Sidebar ──────────── */
+        .cv-download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 20px 0;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,212,255,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .cv-download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            transition: left 0.4s ease;
+            z-index: 0;
+        }
+        .cv-download-btn:hover::before { left: 0; }
+        .cv-download-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,212,255,0.5); }
+        .cv-download-btn i, .cv-download-btn span { position: relative; z-index: 1; }
+
+        /* ── Floating CV Button ──────────────────────── */
+        .float-cv-btn {
+            position: fixed;
+            bottom: 88px;
+            right: 28px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 13px;
+            z-index: 997;
+            box-shadow: 0 6px 24px rgba(124,58,237,0.4);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .float-cv-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 32px rgba(124,58,237,0.6); color: #fff; }
+        @media (max-width: 992px) { .float-cv-btn { bottom: 88px; right: 16px; padding: 10px 14px; font-size: 12px; } }
+
+        /* ── Hero Badge ─────────────────────────────── */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(6,255,165,0.12);
+            border: 1px solid rgba(6,255,165,0.4);
+            border-radius: 50px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        .hero-badge .pulse { width:8px; height:8px; border-radius:50%; background:var(--accent); animation: pulseDot 1.5s ease-in-out infinite; }
+
+        /* ── Hero Stats ─────────────────────────────── */
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; }
+        .hero-stat .lbl { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 2px; }
+        @media (max-width: 768px) { .hero-stats { gap: 15px; } .hero-stat .num { font-size: 20px; } }
+
+        /* ── Card Glow on Hover ─────────────────────── */
+        .skill-category:hover { border-color: var(--primary); box-shadow: 0 0 30px rgba(0,212,255,0.12), var(--shadow); }
+        .portfolio-item:hover { box-shadow: 0 0 30px rgba(0,212,255,0.15), var(--shadow); }
+        .timeline-item:hover { border-left-color: var(--primary); }
+        .timeline-item:hover::before { box-shadow: 0 0 12px var(--primary); }
+
+        /* ── Section alternating bg ─────────────────── */
+        #skills, #portfolio { background: rgba(0,212,255,0.01); }
+
+        /* ── Back to Top ───────────────────────────── */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 18px rgba(0,212,255,0.3);
+        }
+        .back-to-top.btt-visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,212,255,0.5);
+        }
     </style>
 </head>
 
@@ -1116,19 +1324,23 @@
                 <span class="lang en hidden">Data Analyst & BI Engineer | Fintech</span>
             </p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/hamzath-dramane-06680427b" target="_blank">
+                <a href="https://www.linkedin.com/in/hamzath-dramane-06680427b" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" target="_blank">
+                <a href="https://github.com/Anjorin007" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Profil GitHub de Hamzath DRAMANE">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:dramanehamzath@gmail.com">
+                <a href="mailto:dramanehamzath@gmail.com" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
+            <!-- CV Download Button in Sidebar -->
+            <a href="assets/Hamzath_cv.pdf" download="Hamzath_DRAMANE_CV.pdf" class="cv-download-btn" title="Télécharger le CV en PDF">
+                <i class="fas fa-file-pdf"></i>
+                <span class="lang fr">Télécharger CV</span>
+                <span class="lang en hidden">Download CV</span>
+                <i class="fas fa-download" style="font-size:12px; opacity:0.8;"></i>
+            </a>
         </div>
 
         <nav class="nav-menu">
@@ -1167,6 +1379,11 @@
         </nav>
 
         <div class="nav-footer">
+            <a href="assets/Hamzath_cv.pdf" download="Hamzath_DRAMANE_CV.pdf" style="display:inline-flex; align-items:center; gap:6px; color:var(--primary); text-decoration:none; font-size:12px; font-weight:600; margin-bottom:10px; padding:6px 12px; background:rgba(0,212,255,0.08); border-radius:8px; transition:all 0.3s;" onmouseover="this.style.background='rgba(0,212,255,0.18)'" onmouseout="this.style.background='rgba(0,212,255,0.08)'">
+                <i class="fas fa-file-pdf"></i>
+                <span class="lang fr">Télécharger CV PDF</span>
+                <span class="lang en hidden">Download CV PDF</span>
+            </a>
             <p>&copy; 2025 Hamzath DRAMANE</p>
             <p>
                 <span class="lang fr">Tous droits réservés</span>
@@ -1181,6 +1398,12 @@
         <section id="hero" class="section hero">
             <div class="container">
                 <div class="hero-content fade-in-up">
+                    <!-- Available Badge -->
+                    <div class="hero-badge">
+                        <span class="pulse"></span>
+                        <span class="lang fr">🚀 Disponible pour missions Freelance</span>
+                        <span class="lang en hidden">🚀 Available for Freelance missions</span>
+                    </div>
                     <h1>
                         <span class="lang fr">Hamzath DRAMANE</span>
                         <span class="lang en hidden">HAMZATH DRAMANE</span>
@@ -1200,11 +1423,35 @@
                             <span class="lang en hidden">Contact Me</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="assets/cv/hamza-dramane-cv.pdf" class="btn btn-outline" download>
+                        <a href="assets/Hamzath_cv.pdf" download="Hamzath_DRAMANE_CV.pdf" class="btn btn-outline">
+                            <i class="fas fa-file-pdf"></i>
                             <span class="lang fr">Télécharger CV</span>
                             <span class="lang en hidden">Download CV</span>
-                            <i class="fas fa-download"></i>
+                            <i class="fas fa-download" style="font-size:13px;"></i>
                         </a>
+                    </div>
+                    <!-- Hero Stats -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="num">3+</span>
+                            <span class="lbl lang fr">Ans d'expérience</span>
+                            <span class="lbl lang en hidden">Years exp.</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="num">15+</span>
+                            <span class="lbl lang fr">Projets réalisés</span>
+                            <span class="lbl lang en hidden">Projects done</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="num">1M+</span>
+                            <span class="lbl lang fr">Données analysées</span>
+                            <span class="lbl lang en hidden">Data analyzed</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="num">UEMOA</span>
+                            <span class="lbl lang fr">Zone d'impact</span>
+                            <span class="lbl lang en hidden">Impact zone</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1575,8 +1822,47 @@
                     <span class="lang en hidden">Discover my projects categorized by expertise areas, combining data analysis, Business Intelligence and Fintech solutions for the banking sector.</span>
                 </p>
 
+                <!-- Portfolio Filter Tabs -->
+                <div class="portfolio-filters fade-in-up" role="tablist" aria-label="Filtrer les projets par catégorie">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                        <i class="fas fa-th"></i>
+                        <span class="lang fr">Tous</span><span class="lang en hidden">All</span>
+                        <span class="cnt">6</span>
+                    </button>
+                    <button class="filter-btn" data-filter="fintech" role="tab" aria-selected="false">
+                        <i class="fas fa-mobile-alt"></i>
+                        Fintech
+                        <span class="cnt">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="banking" role="tab" aria-selected="false">
+                        <i class="fas fa-university"></i>
+                        <span class="lang fr">Risque Bancaire</span><span class="lang en hidden">Banking Risk</span>
+                        <span class="cnt">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="bi" role="tab" aria-selected="false">
+                        <i class="fas fa-chart-bar"></i>
+                        BI &amp; Data
+                        <span class="cnt">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="datascience" role="tab" aria-selected="false">
+                        <i class="fas fa-robot"></i>
+                        <span class="lang fr">Data Science</span><span class="lang en hidden">Data Science</span>
+                        <span class="cnt">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="apps" role="tab" aria-selected="false">
+                        <i class="fas fa-laptop-code"></i>
+                        Apps
+                        <span class="cnt">1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="signal" role="tab" aria-selected="false">
+                        <i class="fas fa-wave-square"></i>
+                        <span class="lang fr">Signal &amp; Image</span><span class="lang en hidden">Signal &amp; Image</span>
+                        <span class="cnt">1</span>
+                    </button>
+                </div>
+
                 <!-- PROJET PHARE - CreditAI Bénin -->
-                <div class="portfolio-category fade-in-up" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%); border-radius: 20px; padding: 30px; margin-bottom: 60px; border: 2px solid rgba(245, 158, 11, 0.3);">
+                <div class="portfolio-category fade-in-up" data-cat="fintech" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%); border-radius: 20px; padding: 30px; margin-bottom: 60px; border: 2px solid rgba(245, 158, 11, 0.3);">
                     <h3 style="color: #f59e0b;">
                         <i class="fas fa-star"></i>
                         <span class="lang fr">🏆 Projet Phare - Fintech & Inclusion Financière</span>
@@ -1586,6 +1872,14 @@
                         <div class="portfolio-item" data-category="fintech" style="grid-column: span 2; border: 2px solid rgba(245, 158, 11, 0.5);">
                             <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop" alt="CreditAI Bénin">
                             <div class="portfolio-content">
+                                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+                                    <span class="project-status status-dev" aria-label="Statut : En développement">
+                                        <span class="dot"></span>
+                                        <span class="lang fr">🚧 En développement</span>
+                                        <span class="lang en hidden">🚧 In Development</span>
+                                    </span>
+                                    <span style="font-size:11px; color:var(--gray); font-style:italic;">Phase 1 · 2024–2025</span>
+                                </div>
                                 <h4 style="font-size: 24px; color: #f59e0b;">
                                     <span class="lang fr">💳 CreditAI Bénin - Plateforme de Credit Scoring Alternatif</span>
                                     <span class="lang en hidden">💳 CreditAI Benin - Alternative Credit Scoring Platform</span>
@@ -1815,7 +2109,7 @@
                 </div>
 
                 <!-- LiquidWatch - Surveillance Risque de Liquidité -->
-                <div class="portfolio-category fade-in-up" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%); border-radius: 20px; padding: 30px; margin-bottom: 60px; border: 2px solid rgba(0, 212, 255, 0.35);">
+                <div class="portfolio-category fade-in-up" data-cat="banking" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%); border-radius: 20px; padding: 30px; margin-bottom: 60px; border: 2px solid rgba(0, 212, 255, 0.35);">
                     <h3 style="color: #00d4ff;">
                         <i class="fas fa-water"></i>
                         <span class="lang fr">🏦 Surveillance Risque Bancaire — UEMOA</span>
@@ -1831,6 +2125,14 @@
                                 </div>
                             </div>
                             <div class="portfolio-content">
+                                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+                                    <span class="project-status status-live" aria-label="Statut : Live en production">
+                                        <span class="dot"></span>
+                                        <span class="lang fr">✅ Live · Production</span>
+                                        <span class="lang en hidden">✅ Live · Production</span>
+                                    </span>
+                                    <span style="font-size:11px; color:var(--gray); font-style:italic;">Grafana Cloud · 2025</span>
+                                </div>
                                 <h4 style="font-size:24px; color:#00d4ff;">
                                     <i class="fas fa-shield-alt" style="margin-right:8px;"></i>
                                     <span class="lang fr">💧 LiquidWatch — Système de Surveillance du Risque de Liquidité</span>
@@ -1927,7 +2229,7 @@
                 </div>
 
                 <!-- Data Analysis & Visualization Section -->
-                <div class="portfolio-category fade-in-up">
+                <div class="portfolio-category fade-in-up" data-cat="bi">
                     <h3>
                         <i class="fas fa-chart-bar"></i>
                         <span class="lang fr">Data Analysis & Visualisation</span>
@@ -2092,11 +2394,76 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Ports Dashboard - Tendance des Ports -->
+                        <div class="portfolio-item" data-category="bi" style="border: 2px solid rgba(6, 182, 212, 0.3); background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);">
+                            <div style="width:100%; height:180px; background: linear-gradient(135deg, rgba(6,182,212,0.15) 0%, rgba(16,185,129,0.08) 100%); display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(6,182,212,0.2);">
+                                <div style="text-align:center;">
+                                    <i class="fas fa-ship" style="font-size:56px; color:#06b6d4; opacity:0.85;"></i>
+                                    <div style="margin-top:12px; font-size:13px; color:rgba(6,182,212,0.7); letter-spacing:2px; text-transform:uppercase; font-weight:600;">Analyse des tendances portuaires</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+                                    <span class="project-status status-live" aria-label="Statut : Déployé">
+                                        <span class="dot"></span>
+                                        <span class="lang fr">✅ Déployé · Railway</span>
+                                        <span class="lang en hidden">✅ Deployed · Railway</span>
+                                    </span>
+                                    <span style="font-size:11px; color:var(--gray); font-style:italic;">Python · React · dbt · 2025</span>
+                                </div>
+                                <h4 style="font-size: 20px; color: #06b6d4;">
+                                    <i class="fas fa-anchor" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">🚢 Ports Dashboard — Analyse des Tendances Portuaires</span>
+                                    <span class="lang en hidden">🚢 Ports Dashboard — Port Trends Analytics</span>
+                                </h4>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Application <strong>full-stack</strong> d'analyse des tendances portuaires mondiales. Le backend Python/Flask expose une API REST, le frontend React affiche des visualisations interactives, la base PostgreSQL est alimentée par des pipelines <strong>dbt</strong> pour les transformations analytiques, et l'ensemble est déployé sur <strong>Railway avec Docker</strong>.</span>
+                                    <span class="lang en hidden"><strong>Full-stack</strong> application for global port trends analysis. Python/Flask REST API backend, React frontend with interactive visualizations, PostgreSQL database fed by <strong>dbt</strong> analytical pipelines, deployed on <strong>Railway with Docker</strong>.</span>
+                                </p>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #06b6d4;">
+                                        <i class="fas fa-database" style="color: #06b6d4;"></i>
+                                        <strong style="color: #06b6d4; font-size: 12px;"> Pipeline dbt</strong>
+                                        <p style="font-size: 11px; color: var(--gray); margin: 4px 0 0;">Transformations SQL analytiques sur PostgreSQL</p>
+                                    </div>
+                                    <div style="background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #06b6d4;">
+                                        <i class="fab fa-react" style="color: #06b6d4;"></i>
+                                        <strong style="color: #06b6d4; font-size: 12px;"> Frontend React</strong>
+                                        <p style="font-size: 11px; color: var(--gray); margin: 4px 0 0;">Dashboards interactifs & visualisations</p>
+                                    </div>
+                                    <div style="background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #06b6d4;">
+                                        <i class="fab fa-docker" style="color: #06b6d4;"></i>
+                                        <strong style="color: #06b6d4; font-size: 12px;"> Docker + Railway</strong>
+                                        <p style="font-size: 11px; color: var(--gray); margin: 4px 0 0;">Conteneurisation & déploiement cloud</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">Python</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">Streamlit</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">Flask API</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">React</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">PostgreSQL</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">dbt</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.3);">Docker</span>
+                                    <span class="tag" style="background: rgba(6, 182, 212, 0.4); color:#fff;">Railway</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="https://github.com/Anjorin007/project_ports_dashboard" target="_blank" rel="noopener noreferrer" class="tag" style="padding:10px 20px; font-size:14px; background:rgba(6,182,212,0.5); color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                                        <i class="fab fa-github"></i>
+                                        <span class="lang fr">Voir le code</span>
+                                        <span class="lang en hidden">View Code</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Data Science Section -->
-                <div class="portfolio-category fade-in-up">
+                <div class="portfolio-category fade-in-up" data-cat="datascience">
                     <h3>
                         <i class="fas fa-robot"></i>
                         <span class="lang fr">Data Science & Machine Learning</span>
@@ -2262,11 +2629,123 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Projet Big Data — Enquête Marché + Retail Spark -->
+                        <div class="portfolio-item" data-category="data-science" style="grid-column: span 2; border: 2px solid rgba(245, 158, 11, 0.3); background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.04) 100%);">
+                            <div style="width:100%; height:180px; background: linear-gradient(135deg, rgba(245,158,11,0.15) 0%, rgba(251,191,36,0.08) 100%); display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(245,158,11,0.2);">
+                                <div style="text-align:center;">
+                                    <i class="fas fa-database" style="font-size:56px; color:#f59e0b; opacity:0.85;"></i>
+                                    <div style="margin-top:12px; font-size:13px; color:rgba(245,158,11,0.7); letter-spacing:2px; text-transform:uppercase; font-weight:600;">Apache Spark · PySpark 4.0 · 1M+ transactions</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+                                    <span class="project-status status-live" aria-label="Statut : Terminé">
+                                        <span class="dot"></span>
+                                        <span class="lang fr">✅ Terminé · PIGIER Bénin</span>
+                                        <span class="lang en hidden">✅ Completed · PIGIER Benin</span>
+                                    </span>
+                                    <span style="font-size:11px; color:var(--gray); font-style:italic;">Master IA & Big Data · 2025–2026</span>
+                                </div>
+                                <h4 style="font-size: 22px; color: #f59e0b;">
+                                    <i class="fas fa-fire" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">📊 Projet Big Data — Analyse Retail avec Apache Spark</span>
+                                    <span class="lang en hidden">📊 Big Data Project — Retail Analytics with Apache Spark</span>
+                                </h4>
+                                <p style="font-size: 15px; line-height: 1.7;">
+                                    <span class="lang fr">Deux projets académiques réalisés dans le cadre du <strong>Master Intelligence Artificielle & Big Data (PIGIER Bénin)</strong> : une analyse d'enquête de marché (segmentation K-Means) et une analyse Big Data de <strong>1 033 434 transactions retail</strong> avec <strong>Apache Spark 4.0</strong> — agrégations, analyses temporelles, impact des promotions et modélisation prédictive.</span>
+                                    <span class="lang en hidden">Two academic projects from the <strong>Master AI & Big Data (PIGIER Benin)</strong>: a market survey analysis (K-Means segmentation) and a Big Data analysis of <strong>1,033,434 retail transactions</strong> with <strong>Apache Spark 4.0</strong> — aggregations, time series, promotion impact and predictive modeling.</span>
+                                </p>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                                    <div style="background: rgba(245, 158, 11, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #f59e0b;">
+                                        <i class="fas fa-chart-pie" style="color: #f59e0b; font-size: 18px;"></i>
+                                        <strong style="color: #f59e0b; display:block; margin: 6px 0 4px;">Projet 1 — Enquête de Marché</strong>
+                                        <ul style="color: var(--gray); margin: 8px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">123 répondants · 29 variables · Bénin</li>
+                                            <li class="lang fr">Segmentation K-Means (3 segments clients)</li>
+                                            <li class="lang fr">98,4% d'intention d'achat positive</li>
+                                            <li class="lang fr">Recommandations stratégiques marché</li>
+                                            <li class="lang en hidden">123 respondents · 29 variables · Benin</li>
+                                            <li class="lang en hidden">K-Means segmentation (3 customer segments)</li>
+                                            <li class="lang en hidden">98.4% positive purchase intent</li>
+                                            <li class="lang en hidden">Strategic market recommendations</li>
+                                        </ul>
+                                        <div style="margin-top:8px; font-size:12px; color:#f59e0b;">pandas · numpy · scikit-learn · seaborn</div>
+                                    </div>
+                                    <div style="background: rgba(251, 191, 36, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #fbbf24;">
+                                        <i class="fas fa-bolt" style="color: #fbbf24; font-size: 18px;"></i>
+                                        <strong style="color: #fbbf24; display:block; margin: 6px 0 4px;">Projet 2 — Retail Analytics PySpark</strong>
+                                        <ul style="color: var(--gray); margin: 8px 0 0 15px; font-size: 13px;">
+                                            <li class="lang fr">1 033 434 transactions · 107 magasins · 324 produits</li>
+                                            <li class="lang fr">Agrégations Spark · analyses temporelles</li>
+                                            <li class="lang fr">Prix = variable la plus influente (33,7%)</li>
+                                            <li class="lang fr">Modèles prédictifs : Régression Linéaire vs Random Forest</li>
+                                            <li class="lang en hidden">1,033,434 transactions · 107 stores · 324 products</li>
+                                            <li class="lang en hidden">Spark aggregations · time series analysis</li>
+                                            <li class="lang en hidden">Price = most influential variable (33.7%)</li>
+                                            <li class="lang en hidden">Predictive models: Linear Regression vs Random Forest</li>
+                                        </ul>
+                                        <div style="margin-top:8px; font-size:12px; color:#fbbf24;">PySpark 4.0 · Spark MLlib · matplotlib</div>
+                                    </div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; text-align: center;">
+                                    <div style="background: rgba(245, 158, 11, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 22px; font-weight: 800; color: #f59e0b; display: block;">1M+</span>
+                                        <span style="font-size: 11px; color: var(--gray);">Transactions analysées</span>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 22px; font-weight: 800; color: #f59e0b; display: block;">107</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Magasins</span>
+                                            <span class="lang en hidden">Stores</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 22px; font-weight: 800; color: #f59e0b; display: block;">98.4%</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Intention d'achat</span>
+                                            <span class="lang en hidden">Purchase intent</span>
+                                        </span>
+                                    </div>
+                                    <div style="background: rgba(245, 158, 11, 0.15); padding: 15px 10px; border-radius: 10px;">
+                                        <span style="font-size: 22px; font-weight: 800; color: #f59e0b; display: block;">33.7%</span>
+                                        <span style="font-size: 11px; color: var(--gray);">
+                                            <span class="lang fr">Impact du prix</span>
+                                            <span class="lang en hidden">Price impact</span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">PySpark 4.0</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">Spark MLlib</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">pandas</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">scikit-learn</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">K-Means</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.3);">matplotlib</span>
+                                    <span class="tag" style="background: rgba(245, 158, 11, 0.4); color:#fff;">Big Data · PIGIER Bénin</span>
+                                </div>
+                                <div class="portfolio-links" style="gap:12px;">
+                                    <a href="https://github.com/Anjorin007/Projet_Big_data" target="_blank" rel="noopener noreferrer" class="tag" style="padding:10px 20px; font-size:14px; background:rgba(245,158,11,0.5); color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                                        <i class="fab fa-github"></i>
+                                        <span class="lang fr">Projet Big Data</span>
+                                        <span class="lang en hidden">Big Data Project</span>
+                                    </a>
+                                    <a href="https://github.com/Anjorin007/projet_spark" target="_blank" rel="noopener noreferrer" class="tag" style="padding:10px 20px; font-size:14px; background:rgba(251,191,36,0.35); color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                                        <i class="fab fa-github"></i>
+                                        <span class="lang fr">Projet Spark Retail</span>
+                                        <span class="lang en hidden">Spark Retail Project</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Applications Section -->
-                <div class="portfolio-category fade-in-up">
+                <div class="portfolio-category fade-in-up" data-cat="apps">
                     <h3>
                         <i class="fas fa-laptop-code"></i>
                         <span class="lang fr">Applications Développées</span>
@@ -2357,11 +2836,74 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- TailleurAI - Prise de Mesures YOLOv8 -->
+                        <div class="portfolio-item" data-category="applications" style="border: 2px solid rgba(168, 85, 247, 0.3); background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(236, 72, 153, 0.05) 100%);">
+                            <div style="width:100%; height:180px; background: linear-gradient(135deg, rgba(168,85,247,0.15) 0%, rgba(236,72,153,0.08) 100%); display:flex; align-items:center; justify-content:center; border-bottom: 1px solid rgba(168,85,247,0.2);">
+                                <div style="text-align:center;">
+                                    <i class="fas fa-ruler-combined" style="font-size:56px; color:#a855f7; opacity:0.85;"></i>
+                                    <div style="margin-top:12px; font-size:13px; color:rgba(168,85,247,0.7); letter-spacing:2px; text-transform:uppercase; font-weight:600;">Computer Vision · YOLOv8 Pose</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+                                    <span class="project-status status-dev" aria-label="Statut : En développement">
+                                        <span class="dot"></span>
+                                        <span class="lang fr">🚧 En développement</span>
+                                        <span class="lang en hidden">🚧 In Development</span>
+                                    </span>
+                                    <span style="font-size:11px; color:var(--gray); font-style:italic;">Python · YOLOv8 · Dec 2025</span>
+                                </div>
+                                <h4 style="font-size: 20px; color: #a855f7;">
+                                    <i class="fas fa-cut" style="margin-right: 8px;"></i>
+                                    <span class="lang fr">✂️ TailleurAI — Prise de Mesures Corporelles Automatique</span>
+                                    <span class="lang en hidden">✂️ TailleurAI — Automatic Body Measurement App</span>
+                                </h4>
+                                <p style="font-size: 14px; line-height: 1.6;">
+                                    <span class="lang fr">Application Python innovante utilisant <strong>YOLOv8 Pose Estimation</strong> pour effectuer automatiquement des mesures corporelles (tour de poitrine, hanches, taille…) à partir d'images ou de flux vidéo. Conçue pour assister les <strong>tailleurs et stylistes</strong> dans la prise de mensurations précises sans contact physique, accessible via une interface web.</span>
+                                    <span class="lang en hidden">Innovative Python application using <strong>YOLOv8 Pose Estimation</strong> to automatically perform body measurements (chest, hips, waist...) from images or video streams. Designed to assist <strong>tailors and stylists</strong> in taking accurate measurements without physical contact, accessible via a web interface.</span>
+                                </p>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 12px 0;">
+                                    <div style="background: rgba(168, 85, 247, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #a855f7;">
+                                        <i class="fas fa-eye" style="color: #a855f7;"></i>
+                                        <strong style="color: #a855f7; font-size: 12px;"> Pose Estimation</strong>
+                                        <p style="font-size: 11px; color: var(--gray); margin: 4px 0 0;">Détection 17 keypoints corporels</p>
+                                    </div>
+                                    <div style="background: rgba(168, 85, 247, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #a855f7;">
+                                        <i class="fas fa-ruler" style="color: #a855f7;"></i>
+                                        <strong style="color: #a855f7; font-size: 12px;"> Mensurations Auto</strong>
+                                        <p style="font-size: 11px; color: var(--gray); margin: 4px 0 0;">Calcul automatique sans contact</p>
+                                    </div>
+                                    <div style="background: rgba(168, 85, 247, 0.1); padding: 10px; border-radius: 8px; border-left: 3px solid #a855f7;">
+                                        <i class="fas fa-globe" style="color: #a855f7;"></i>
+                                        <strong style="color: #a855f7; font-size: 12px;"> Interface Web</strong>
+                                        <p style="font-size: 11px; color: var(--gray); margin: 4px 0 0;">Application accessible en ligne</p>
+                                    </div>
+                                </div>
+
+                                <div class="portfolio-tags" style="margin: 12px 0;">
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">Python</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">YOLOv8</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">Pose Estimation</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">Computer Vision</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.3);">OpenCV</span>
+                                    <span class="tag" style="background: rgba(168, 85, 247, 0.4); color:#fff;">Deep Learning</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="https://github.com/Anjorin007/tailleur-app" target="_blank" rel="noopener noreferrer" class="tag" style="padding:10px 20px; font-size:14px; background:rgba(168,85,247,0.5); color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                                        <i class="fab fa-github"></i>
+                                        <span class="lang fr">Voir le code</span>
+                                        <span class="lang en hidden">View Code</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Signal & Image Processing Section -->
-                <div class="portfolio-category fade-in-up">
+                <div class="portfolio-category fade-in-up" data-cat="signal">
                     <h3>
                         <i class="fas fa-wave-square"></i>
                         <span class="lang fr">Traitement Signal & Image</span>
@@ -2541,13 +3083,32 @@
         </section>
     </main>
 
+    <!-- Floating CV Download Button -->
+    <a href="assets/Hamzath_cv.pdf" download="Hamzath_DRAMANE_CV.pdf" class="float-cv-btn" title="Télécharger le CV PDF">
+        <i class="fas fa-file-pdf"></i>
+        <span class="lang fr">Mon CV</span>
+        <span class="lang en hidden">My CV</span>
+        <i class="fas fa-download" style="font-size:11px; opacity:0.8;"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de page">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Footer -->
-    <footer style="padding: 40px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+    <footer style="padding: 40px 60px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3);">
         <div class="container">
-            <p>&copy; 2025 <strong>Hamzath DRAMANE</strong> - 
+            <p style="margin-bottom:12px;">&copy; 2025 <strong style="background:linear-gradient(135deg,var(--primary),var(--secondary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Hamzath DRAMANE</strong> &mdash;
                 <span class="lang fr">Tous droits réservés</span>
                 <span class="lang en hidden">All rights reserved</span>
             </p>
+            <a href="assets/Hamzath_cv.pdf" download="Hamzath_DRAMANE_CV.pdf" style="display:inline-flex; align-items:center; gap:8px; padding:10px 24px; background:linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; text-decoration:none; border-radius:50px; font-size:14px; font-weight:700; box-shadow:0 4px 20px rgba(0,212,255,0.3); transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 30px rgba(0,212,255,0.5)'" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 20px rgba(0,212,255,0.3)'">
+                <i class="fas fa-file-pdf"></i>
+                <span class="lang fr">Télécharger mon CV PDF</span>
+                <span class="lang en hidden">Download my CV PDF</span>
+                <i class="fas fa-download" style="font-size:12px;"></i>
+            </a>
         </div>
     </footer>
 
@@ -2773,6 +3334,39 @@
         }, { threshold: 0.5 });
 
         skillBars.forEach(bar => skillObserver.observe(bar));
+
+        // ── Portfolio Filter Tabs ─────────────────────
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.portfolio-category[data-cat]').forEach(cat => {
+                    if (filter === 'all' || cat.dataset.cat === filter) {
+                        cat.classList.remove('cat-hidden');
+                    } else {
+                        cat.classList.add('cat-hidden');
+                    }
+                });
+            });
+        });
+
+        // ── Back to Top ─────────────────────────────
+        const bttBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 320) {
+                bttBtn.classList.add('btt-visible');
+            } else {
+                bttBtn.classList.remove('btt-visible');
+            }
+        }, { passive: true });
+        bttBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
